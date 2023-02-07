@@ -7,9 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class ThursdayApplication {
 
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
-			+ "classpath:application.yml,"
-//			+ "C:\\GoodCen\\Edu\\workspace\\Thursday\\real-application.yml";
-			+ "/home/huiwon/java/app/config/real-application.yml";
+			+ "classpath:application.yml"
 	
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(ThursdayApplication.class)
