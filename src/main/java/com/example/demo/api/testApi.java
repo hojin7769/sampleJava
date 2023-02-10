@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class testApi {
 	@GetMapping("/hello")
 	public String hello(){
-		return "hello Tuesday Spring API 응답131";
+		return "hello Tuesday Spring API 응답쏘리 낫 쏘리";
 	};
 	
 	@Autowired
