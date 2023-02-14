@@ -15,7 +15,7 @@ public class testApi {
 	private RunShellScript shellScript;
 	@GetMapping("/hello")
 	public String hello(){
-		return "hello Tuesday Spring API 응답쏘리 낫 쏘리";
+		return "hello Tuesday Spring API 토요일이 나는 좋아";
 	};
 
 
