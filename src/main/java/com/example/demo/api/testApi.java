@@ -28,7 +28,7 @@ public class testApi {
 	}
 	@GetMapping("test2")
 	public Map test2() {
-		String cmds = "sh /tmp/shellTest/myscript.sh";
+		String cmds = "sh /var/local/sh/svnpull.sh";
 		String[] callCmd = {"/bin/bash", "-c", cmds};
 		Map map = shRunner.execCommand(callCmd);
 
