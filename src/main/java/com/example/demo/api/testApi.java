@@ -33,7 +33,7 @@ public class testApi {
 		Map map = shRunner.execCommand(cmds);
 
 		System.out.println(map);
-		return null;
+		return map;
 	}
 
 
