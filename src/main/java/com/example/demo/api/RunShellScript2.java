@@ -9,7 +9,7 @@ public class RunShellScript2 {
     public void run(){
 
         ProcessBuilder processBuilder = new ProcessBuilder();
-        processBuilder.command("/tmp/shellTest/myscript.sh");
+        processBuilder.command("sh /tmp/shellTest/myscript.sh");
 
 
 

@@ -8,7 +8,7 @@ public class RunShellScript {
     public String runShell(){
         try{
             // Run script
-            Process process = Runtime.getRuntime().exec("/tmp/shellTest/myscript.sh");
+            Process process = Runtime.getRuntime().exec("sh /tmp/shellTest/myscript.sh");
 
             // Read output
             StringBuilder output = new StringBuilder();

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class testApi {
 
-	private RunShellScript shellScript;
+	private RunShellScript shellScript = new RunShellScript();
 	private RunShellScript2 runShellScript2;
 	ShRunner shRunner = new ShRunner();
 	@GetMapping("/hello")
