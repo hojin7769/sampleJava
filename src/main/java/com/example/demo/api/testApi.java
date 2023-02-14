@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class testApi {
 
 	private RunShellScript shellScript;
+	private RunShellScript2 runShellScript2;
 	@GetMapping("/hello")
 	public String hello(){
 		return "hello Tuesday Spring API 토요일이 나는 좋아 왜 안변해?";
@@ -23,7 +24,13 @@ public class testApi {
 	public String test() {
 		return shellScript.runShell();
 	}
-	
+	@GetMapping("test2")
+	public String test2() {
+		 runShellScript2.run();
+		 return "";
+	}
+
+
 	@Autowired
 	private Environment environment;
 	
