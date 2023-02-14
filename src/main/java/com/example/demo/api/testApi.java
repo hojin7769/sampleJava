@@ -29,7 +29,8 @@ public class testApi {
 	@GetMapping("test2")
 	public Map test2() {
 		String cmds = "sh /var/local/sh/svnpull.sh";
-		String[] callCmd = {"/bin/bash", "-c", cmds};
+		String params = "TEST";
+		String[] callCmd = {"/bin/bash", "-c", cmds,params};
 		Map map = shRunner.execCommand(callCmd);
 
 		System.out.println(map);
