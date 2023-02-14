@@ -1,6 +1,7 @@
 package com.example.demo.api;
 
 import java.util.Arrays;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -14,6 +15,7 @@ public class testApi {
 
 	private RunShellScript shellScript;
 	private RunShellScript2 runShellScript2;
+	ShRunner shRunner = new ShRunner();
 	@GetMapping("/hello")
 	public String hello(){
 		return "hello Tuesday Spring API 토요일이 나는 좋아 왜 안변해?";
@@ -25,9 +27,12 @@ public class testApi {
 		return shellScript.runShell();
 	}
 	@GetMapping("test2")
-	public String test2() {
-		 runShellScript2.run();
-		 return "";
+	public Map test2() {
+		String cmds = "sh /tmp/shellTest/myscript.sh";
+		String[] callCmd = {"/bin/bash", "-c", cmds};
+		Map map = shRunner.execCommand(callCmd);
+
+		System.out.println(map);
 	}
 
 
