@@ -30,9 +30,10 @@ public class testApi {
 	public Map test2() {
 		String cmds = "sh /tmp/shellTest/myscript.sh";
 		String[] callCmd = {"/bin/bash", "-c", cmds};
-		Map map = shRunner.execCommand(callCmd);
+		Map map = shRunner.execCommand(cmds);
 
 		System.out.println(map);
+		return null;
 	}
 
 
