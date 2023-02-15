@@ -49,7 +49,7 @@ public class testApi {
 		Map map = shRunner.execCommand(callCmd);
 
 		System.out.println(map);
-		return null;
+		return map;
 	}
 
 	@GetMapping("test3")
