@@ -1,7 +1,10 @@
 package com.example.demo.api;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 import com.example.demo.shell.CommandLineExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +31,29 @@ public class testApi {
 		return shellScript.runShell();
 	}
 	@GetMapping("test2")
-	public Map test2() {
+	public Map test2(Map<String, Objects> param) {
+
+		List<String> list = param.entrySet().stream()
+				.map(item -> {
+					String value = item.getValue().toString();
+					return value;
+				})
+		.collect(Collectors.toList());
+
+		String value = "";
+
+		for (String a:
+			 list) {
+			value += a;
+			value += " ";
+
+		}
+
+
+
+
 		String cmds = "sh /var/local/sh/svnpull.sh";
-		String params = " TEST";
-		String[] callCmd = {"/bin/bash", "-c", cmds + params};
+		String[] callCmd = {"/bin/bash", "-c", cmds + value};
 //		String[] callCmd = {cmds,params};
 		Map map = shRunner.execCommand(callCmd);
 
