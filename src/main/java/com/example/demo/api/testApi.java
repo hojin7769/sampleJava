@@ -3,15 +3,12 @@ package com.example.demo.api;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.example.demo.shell.CommandLineExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
@@ -30,26 +27,20 @@ public class testApi {
 	public String test() {
 		return shellScript.runShell();
 	}
-	@GetMapping("test2")
-	public Map test2(Map<String, Objects> param) {
+	@PostMapping("/test2")
+	public Map test2(@RequestBody(required = false) Map<String, Object> param) {
+
+
 
 		List<String> list = param.entrySet().stream()
-				.map(item -> {
-					String value = item.getValue().toString();
-					return value;
-				})
-		.collect(Collectors.toList());
+				.map(item ->  item.getValue().toString())
+				.collect(Collectors.toList());
 
 		String value = "";
-
 		for (String a:
-			 list) {
-			value += " ";
-			value += a;
-
+			list ) {
+			value = value + " " + a;
 		}
-
-
 
 
 		String cmds = "sh /var/local/sh/svnpull.sh";
@@ -58,7 +49,7 @@ public class testApi {
 		Map map = shRunner.execCommand(callCmd);
 
 		System.out.println(map);
-		return map;
+		return null;
 	}
 
 	@GetMapping("test3")
