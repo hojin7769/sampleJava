@@ -56,7 +56,6 @@ public class CommandLineExecutor {
             if (process.exitValue() == 0) {
                 System.out.println("성공");
                 System.out.println(successOutput.toString());
-                return successOutput.toString();
             } else {
                 // shell 실행이 비정상 종료되었을 경우
                 System.out.println("비정상 종료");
@@ -67,8 +66,6 @@ public class CommandLineExecutor {
             if (!CommonUtil.isEmpty(errorOutput.toString())) {
                 // shell 실행이 비정상 종료되었을 경우
                 System.out.println("오류");
-                System.out.println(successOutput.toString());
-                return errorOutput.toString();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,7 +80,7 @@ public class CommandLineExecutor {
                 e1.printStackTrace();
             }
         }
-        return successOutput.toString();
+        return msg;
     }
 
 }
