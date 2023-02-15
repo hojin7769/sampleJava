@@ -8,7 +8,7 @@ public class RunShellScript {
     public String runShell(){
         try{
             String pram = "TEST ";
-            String[] command = new String[] {"sh /var/local/sh/svnpull.sh" , pram};
+            String[] command = new String[] {"/bash/bin","-c","sh /var/local/sh/svnpull.sh" , pram};
             // Run script
             Process process = Runtime.getRuntime().exec(command);
 
