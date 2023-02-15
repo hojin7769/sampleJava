@@ -7,6 +7,7 @@ public class RunShellScript {
 
     public String runShell(){
         try{
+            //인자
             String pram = "TEST";
             String[] command = new String[] {"/bin/bash", "-c", "sh /var/local/sh/svnpull.sh", pram};
             // Run script
