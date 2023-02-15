@@ -61,15 +61,15 @@ public class CommandLineExecutor {
                 // shell 실행이 비정상 종료되었을 경우
                 System.out.println("비정상 종료");
                 System.out.println(successOutput.toString());
-                return successOutput.toString();
             }
 
 //             shell 실행시 에러가 발생
-//            if (CommonUtil.isEmpty(errorOutput.toString())) {
-//                // shell 실행이 비정상 종료되었을 경우
-//                System.out.println("오류");
-//                System.out.println(successOutput.toString());
-//            }
+            if (!CommonUtil.isEmpty(errorOutput.toString())) {
+                // shell 실행이 비정상 종료되었을 경우
+                System.out.println("오류");
+                System.out.println(successOutput.toString());
+                return errorOutput.toString();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -83,7 +83,7 @@ public class CommandLineExecutor {
                 e1.printStackTrace();
             }
         }
-        return msg;
+        return successOutput.toString();
     }
 
 }
