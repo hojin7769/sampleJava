@@ -20,7 +20,7 @@ public class CommandLineExecutor {
         String msg = null;
 
         List<String> cmdList = new ArrayList<>();
-        cmdList.add("/bin/sh");
+        cmdList.add("/bin/bash");
         cmdList.add("-c");
 
 //        if (System.getProperty("os.name").indexOf("Windows") > -1) {
