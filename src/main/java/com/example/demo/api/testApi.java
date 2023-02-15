@@ -53,10 +53,14 @@ public class testApi {
 	}
 
 	@GetMapping("test3")
-	public String test3() {
-		String cmds = "sh /var/local/sh/svnpull.sh";
-		CommandLineExecutor.execute(cmds);
-		return "";
+	public Map test3() {
+		String cmds = "sh /var/local/sh/nginxupdate.sh";
+		String[] callCmd = {"/bin/bash", "-c", cmds };
+//		String[] callCmd = {cmds,params};
+		Map map = shRunner.execCommand(callCmd);
+
+		System.out.println(map);
+		return map;
 	}
 
 
