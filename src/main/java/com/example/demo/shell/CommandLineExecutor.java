@@ -20,14 +20,16 @@ public class CommandLineExecutor {
         String msg = null;
 
         List<String> cmdList = new ArrayList<>();
+        cmdList.add("/bin/sh");
+        cmdList.add("-c");
 
-        if (System.getProperty("os.name").indexOf("Windows") > -1) {
-            cmdList.add("cmd");
-            cmdList.add("/c");
-        } else {
-            cmdList.add("/bin/sh");
-            cmdList.add("-c");
-        }
+//        if (System.getProperty("os.name").indexOf("Windows") > -1) {
+//            cmdList.add("cmd");
+//            cmdList.add("/c");
+//        } else {
+//            cmdList.add("/bin/sh");
+//            cmdList.add("-c");
+//        }
 
         cmdList.add(cmd);
         cmdList.add("TEST");
