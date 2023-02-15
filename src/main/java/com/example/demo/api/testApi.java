@@ -43,7 +43,7 @@ public class testApi {
 		}
 
 
-		String cmds = "sh /var/local/sh/svnpull.sh";
+		String cmds = "sh /var/local/sh/gitpull.sh";
 		String[] callCmd = {"/bin/bash", "-c", cmds + value};
 //		String[] callCmd = {cmds,params};
 		Map map = shRunner.execCommand(callCmd);
