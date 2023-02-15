@@ -3,6 +3,7 @@ package com.example.demo.api;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.example.demo.shell.CommandLineExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,13 @@ public class testApi {
 
 		System.out.println(map);
 		return map;
+	}
+
+	@GetMapping("test3")
+	public String test3() {
+		String cmds = "sh /var/local/sh/svnpull.sh";
+		CommandLineExecutor.execute(cmds);
+		return "";
 	}
 
 
