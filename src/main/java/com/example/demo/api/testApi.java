@@ -44,8 +44,8 @@ public class testApi {
 
 		for (String a:
 			 list) {
-			value += a;
 			value += " ";
+			value += a;
 
 		}
 
